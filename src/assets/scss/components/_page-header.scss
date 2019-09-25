@@ -1,6 +1,12 @@
 .page-header {
+  background-color: $white;
+  box-shadow: $box-shadow;
  
   &__inner {
     @extend .container;
+
+    min-height: 90px;
+    display: flex;
+    align-items: center;
   }
 }

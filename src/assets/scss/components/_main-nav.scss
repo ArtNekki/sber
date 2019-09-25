@@ -1,0 +1,27 @@
+.main-nav {
+  margin: 0;
+  margin-left: 76px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 37px;
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    line-height: 14px;
+    color: $secondary-theme;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    .main-nav__item--active {
+      color: $main-theme;
+    }
+  }
+}
