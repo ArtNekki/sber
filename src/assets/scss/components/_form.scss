@@ -1,0 +1,12 @@
+.form {
+
+
+  &__input-group {
+    display: flex;
+
+    *:not(:last-child) {
+      margin-right: 30px;
+      flex-grow: 1;
+    }
+  }
+}

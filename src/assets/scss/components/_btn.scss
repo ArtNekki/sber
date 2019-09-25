@@ -1,0 +1,17 @@
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 17px;
+  line-height: 19px;
+  color: $white;
+  border: none;
+  border-radius: $border-radius;
+  background: $main-theme;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: darken($main-theme, 10%);
+  }
+}

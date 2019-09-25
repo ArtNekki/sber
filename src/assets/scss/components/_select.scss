@@ -1,0 +1,41 @@
+.select {
+  position: relative;
+
+  &::before {
+    $arrow-height: 7px;
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(calc(-#{$arrow-height} / 2));
+    border-width: $arrow-height 5px;
+    border-style: solid;
+    border-color: $main-theme transparent transparent transparent;
+  }
+
+  &:hover::before {
+    border-top-color: darken($main-theme, 10%);
+  }
+
+  &__field {
+    margin: 0;
+    padding: 12px 37px 12px 18px;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 17px;
+    line-height: 19px;
+    color: $main-theme;
+    border: 1px solid $main-theme;
+    border-radius: $border-radius;
+    background-color: $white;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    .select:hover & {
+      color: darken($main-theme, 10%);
+      border-color: darken($main-theme, 10%);
+    }
+  }
+}
