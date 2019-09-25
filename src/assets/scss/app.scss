@@ -18,9 +18,9 @@
 @import 'global/common';
 
 //grid
-@import "global/grid/grid-framework";
-@import "global/grid/grid";
-@import "global/grid";
+// @import "global/grid/grid-framework";
+// @import "global/grid/grid";
+// @import "global/grid";
 
 //components
 // @import 'components/table';
@@ -33,3 +33,7 @@
 // @import 'components/slider';
 // @import 'components/lightbox';
 // @import 'components/dropdown';
+
+@import 'components/container';
+@import 'components/page';
+@import 'components/page-header';

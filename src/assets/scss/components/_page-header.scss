@@ -1,0 +1,6 @@
+.page-header {
+ 
+  &__inner {
+    @extend .container;
+  }
+}

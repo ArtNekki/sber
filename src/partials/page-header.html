@@ -1,0 +1,44 @@
+<header class="page-header">
+    <div class="page-header__inner">
+      <a href="" class="page-header__logo">
+        {{{ icon name="logo" width="145" height="37" }}}
+      </a>
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+            {{#each main-nav}}
+              <li class="main-nav__item">
+                <a href="{{ link }}" class="main-nav__link">{{ title }}</a>
+              </li>
+            {{/each}}
+        </ul>
+        <div class="user-role">
+          <div class="user-role__info">
+              <img src="{{root}}/assets/img/content/user-avatar@3x.jpg" width="30" height="30" srcset=" {{root}}/assets/img/content/user-avatar.jpg 1x, {{root}}/assets/img/content/user-avatar@2x.jpg 2x" class="main-nav__avatar" alt="Константин Константинопольский">
+              <a href="#" class="user-role__name">Константин Константинопольский</a>
+              <span class="user-role__post">менеджер</span>
+          </div>
+          <ul class="user-role__list">
+              <li class="user-role__item">
+                <a href="#" class="user-role__link">
+                  {{{ icon name="faq" width="28" height="27" }}}
+                  <span>FAQ</span>
+                </a>
+              </li>
+              <li class="user-role__item">
+                <a href="#" class="user-role__link">
+                  {{{ icon name="support" width="26" height="26" }}}
+                  <span>Поддержка</span>
+                </a>
+              </li>
+              <li class="user-role__item">
+                <a href="#" class="user-role__link">
+                  {{{ icon name="logout" width="21" height="24" }}}
+                  <span>Выход</span>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  

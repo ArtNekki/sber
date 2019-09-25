@@ -44,7 +44,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1170px
+  xl: 1200px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -53,11 +53,13 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:                12 !default;
-$grid-gutter-width:           60px !default;
-$grid-row-columns:            6 !default;
+// $grid-columns:                12 !default;
+// $grid-gutter-width:           60px !default;
+// $grid-row-columns:            6 !default;
 
 
-// Container padding
+//
+$gutter-width:           30px !default;
+$container-padding-x:    $gutter-width / 2 !default;
 
-$container-padding-x: $grid-gutter-width / 2 !default;
+
