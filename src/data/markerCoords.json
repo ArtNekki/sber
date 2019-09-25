@@ -1,0 +1,12 @@
+[
+  { "id": "id-1", "count": 6, "coords": { "lat": "12.7666", "lng": "-12.0026" }}, 
+  { "id": "id-2", "count": 4, "coords": { "lat": "9.7666", "lng": "-3.0026" }},
+  { "id": "id-3", "count": 7, "coords": { "lat": "5.7666", "lng": "-2.0026" }},
+  { "id": "id-4", "count": 1, "coords": { "lat": "16.7666", "lng": "-10.0026"}},
+  { "id": "id-5", "count": 3, "coords": { "lat": "22.7666", "lng": "-3.0026" }},
+  { "id": "id-6", "count": 8, "coords": { "lat": "14.7666", "lng": "8.0026" }},
+  { "id": "id-7", "count": 2, "coords": { "lat": "24.7666", "lng": "13.0026" }},
+  { "id": "id-8", "count": 6, "coords": { "lat": "19.7666", "lng": "-18.0026" }},
+  { "id": "id-9", "count": 7, "coords": { "lat": "32.7666", "lng": "15.0026" }},
+  { "id": "id-10", "count": 22, "coords": { "lat": "28.7666", "lng": "10.0026" }}
+]

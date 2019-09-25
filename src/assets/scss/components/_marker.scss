@@ -1,0 +1,92 @@
+.marker {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::before {
+    content: attr(data-count);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 16px;
+  }
+
+  svg {
+    width: inherit;
+    height: inherit;
+    fill: none;
+  }
+
+  &-side-left {
+    fill: $blue;
+  }
+
+  &-side-right-bottom {
+    fill: $pink;
+  }
+
+  &-side-right-top {
+    fill: $purple;
+  }
+
+  &--single {
+    background-color: $purple;
+    box-shadow: inset 0 0 0 1px white;
+
+    .marker-side-left, 
+    .marker-side-right-bottom,
+    .marker-side-right-top {
+      fill: $purple;
+      stroke-width: 0;
+    }
+  }
+
+  &--double {
+    box-shadow: inset 0 0 0 1px white;
+
+    .marker-side-left {
+      fill: $blue;
+    }
+
+    .marker-side-right-bottom,
+    .marker-side-right-top {
+      fill: $purple;
+      stroke-width: 0;
+    }
+  }
+
+  &--triple {
+    
+    .marker-side-left {
+      fill: $blue;
+    }
+
+    .marker-side-right-bottom {
+      fill: $pink;
+    }
+
+    .marker-side-right-top {
+      fill: $purple;
+    }
+  }
+
+  &--other {
+    background-color: $blue;
+    box-shadow: inset 0 0 0 1px white;
+
+    .marker-side-left, 
+    .marker-side-right-bottom,
+    .marker-side-right-top {
+      fill: $blue;
+      stroke-width: 0;
+    }
+  }
+
+  &--active {
+    box-shadow: 0 0 15px rgba($white, 0.7);
+  }
+}

@@ -1,0 +1,85 @@
+.lg-icon-mod {
+  $icon-opacity: 0.8;
+
+  position: relative;
+  margin: 15px;
+  padding: 0;
+  width: auto;
+  height: auto;
+
+  &:hover::before,
+  &:hover::after {
+    opacity: $icon-opacity;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: $icon-opacity;
+  }
+}
+
+.lg-icon-mod--pseudo {
+  width: 20px;
+  height: 20px;
+  display: block;
+  font-size: 0;
+  font-family: $font-family;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.lg-toolbar {
+  background-color: rgba($black, 0.3);
+
+  .lg-close,
+  .lg-download {
+    @extend .lg-icon-mod;
+  }
+  
+  .lg-close::after,
+  .lg-download::after {
+    @extend .lg-icon-mod--pseudo;
+  }
+
+  .lg-close::after {
+    background-image: url('../img/svg/close-solid-white.svg');
+  }
+  
+  .lg-download::after {
+    height: 17px;
+    background-image: url('../img/svg/download-solid-white.svg');
+  }
+}
+
+.lg-actions {
+
+  .lg-next,
+  .lg-prev {
+    @extend .lg-icon-mod;
+    position: absolute;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  .lg-next::before,
+  .lg-prev::after {
+    @extend .lg-icon-mod--pseudo;
+  }
+
+  .lg-next::before {
+    background-image: url('../img/svg/arrow-solid-white.svg');
+  }
+
+  .lg-prev::after {
+    background-image: url('../img/svg/arrow-solid-white.svg');
+    transform: rotateZ(-180deg);
+  }
+}
+
+.lg-backdrop {
+  background: rgba($black, 0.9);
+}
+
+
+
+

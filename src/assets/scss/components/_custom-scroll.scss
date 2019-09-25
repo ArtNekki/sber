@@ -1,0 +1,101 @@
+.custom-scroll {
+  $scrollbar-width:           8px;
+
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  &-content {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    -webkit-overflow-scrolling: touch;
+
+    .custom-scroll--scrollbar & {
+      padding-right: calc(#{$scrollbar-width} + 15px);
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &-track {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $scrollbar-width;
+    background-color: $gray;
+    opacity: 0;
+
+    .custom-scroll--scrollbar & {
+      opacity: 1;
+    }
+  }
+
+  &-free {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &-bar {
+    position: absolute;
+    z-index: 1;
+    left: ($scrollbar-width * -1 + 1);
+    display: none;
+    box-sizing: border-box;
+    width: ($scrollbar-width);
+    pointer-events: auto;
+    background-color: darken($gray, 11%);
+    opacity: 1;
+    border-radius: 10px;
+
+    @include hover {
+      background-color: darken($gray, 15%);
+    }
+
+    .custom-scroll--scrollbar & {
+      display: block;
+    }
+
+    .custom-scroll--dragging & {
+      background-color: darken($gray, 20%);
+    }
+  }
+}
+
+// .custom-scroll {
+//   overflow-y: auto;
+
+//   &::-webkit-scrollbar-track
+//   {
+//       border-radius: 15px;
+//       // background-color: $gray;
+//   }
+
+//   &::-webkit-scrollbar
+//   {
+//       width: 8px;
+//       // background-color: $gray;
+//   }
+
+//   &::-webkit-scrollbar-thumb
+//   {
+//       background-color: darken($gray, 8%);
+//       border-radius: 15px;
+//   }
+
+//   &-inner {
+//     padding-right: 20px;
+//   }
+// }
+
