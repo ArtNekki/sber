@@ -3,13 +3,9 @@ $white: #ffffff;
 $black: #000000;
 $gray-light: #AFADAE;
 $gray: #7D96AB;
-$gray-darken: #C3CFD6;
 $gray-dark: #373a3c;
-$blue: #6dd5f3;
-$blue-dark: #72C2E0;
-$pink: #f522ff;
-$purple: #5e7af4;
 
+//theme
 $main-theme: #33B44E;
 $secondary-theme: #54ACF2;
 
@@ -30,30 +26,30 @@ $enable-grid-classes:  true !default;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// ) !default;
 
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1230px
-) !default;
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1230px
+// ) !default;
 
-@include _assert-ascending($container-max-widths, "$container-max-widths");
+// @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
 //
