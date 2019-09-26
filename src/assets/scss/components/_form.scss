@@ -1,8 +1,14 @@
 .form {
+  padding-right: 10px;
+  padding-left: 10px;
 
   &--login {
-    padding-right: 55px;
-    padding-left: 55px;
+    padding-right: 65px;
+    padding-left: 65px;
+  }
+
+  &__field {
+    margin-bottom: 15px;
   }
 
   &__input-group {

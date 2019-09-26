@@ -11,11 +11,15 @@
 
   &__content {
     position: relative;
-    padding: 60px 40px 40px;
+    padding: 60px 30px 40px;
     min-width: 540px;
     min-height: 484px;
     background-color: $white;
     box-shadow: 5px 5px 10px rgba($black, 0.15);
+
+    .modal--params-auto & {
+      min-width: 440px;
+    }
   }
 
   &__title {
