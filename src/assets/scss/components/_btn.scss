@@ -10,8 +10,11 @@
   outline: none;
   cursor: pointer;
 
-  &:hover,
-  &:active {
+  @include hover {
+    background: darken($main-theme, 10%);
+  }
+
+  @include active {
     background: darken($main-theme, 10%);
   }
 }

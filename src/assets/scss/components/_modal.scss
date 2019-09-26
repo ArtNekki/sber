@@ -11,15 +11,16 @@
 
   &__content {
     position: relative;
-    padding: 60px 95px 40px 95px;
+    padding: 60px 40px 40px;
     min-width: 540px;
+    min-height: 484px;
     background-color: $white;
     box-shadow: 5px 5px 10px rgba($black, 0.15);
   }
 
   &__title {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 56px;
     font-size: 24px;
     line-height: 26px;
     color: $gray;

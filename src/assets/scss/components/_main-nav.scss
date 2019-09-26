@@ -18,9 +18,11 @@
     color: $secondary-theme;
     text-decoration: none;
 
-    &:hover,
-    &:active,
-    .main-nav__item--active {
+    @include hover {
+      color: $main-theme;
+    }
+
+    @include active {
       color: $main-theme;
     }
   }

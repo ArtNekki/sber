@@ -16,6 +16,10 @@
     text-align: left;
     color: #AFADAE;
     white-space: nowrap;
+
+    @include hover {
+      color: darken(#AFADAE, 10%);
+    }
     
 
     &::before {
@@ -24,8 +28,8 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       box-sizing: border-box;
       border: 1px solid #cccccc;
       border-radius: 2px;

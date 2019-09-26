@@ -90,8 +90,11 @@
     color: gray;
     text-decoration: none;
 
-    &:hover,
-    &:active {
+    @include hover {
+      color: darken($gray, 25%);
+    }
+
+    @include active {
       color: darken($gray, 25%);
     }
 
