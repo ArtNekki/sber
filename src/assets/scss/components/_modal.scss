@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($black, 0.3);
+
+  &__content {
+    position: relative;
+    padding: 60px 95px 40px 95px;
+    background-color: $white;
+    box-shadow: 5px 5px 10px rgba($black, 0.15);
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-size: 24px;
+    line-height: 26px;
+    color: $gray;
+  }
+
+  &__close {
+    position: absolute;
+    top: 21px;
+    right: 18px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}

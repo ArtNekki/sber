@@ -9,4 +9,9 @@
       flex-grow: 1;
     }
   }
+
+  &__result {
+    margin-top: 15px;
+    color: $gray;
+  }
 }
