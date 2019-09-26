@@ -1,0 +1,37 @@
+.input {
+  $padding-right: 10px;
+
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+
+  &__field {
+    padding: 10px;
+    padding-right: $padding-right;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 17px;
+    line-height: 19px;
+    color: #999999;
+    background: $white;
+    border: 1px solid #cccccc;
+    border-radius: $border-radius;
+    outline: none;
+
+    &:focus {
+      border-color: darken(#cccccc, 10%);
+    }
+
+    @include placeholder {
+      color: #999999;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: $padding-right;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
