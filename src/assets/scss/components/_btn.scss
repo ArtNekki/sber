@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  padding: 13px 25px;
+  padding: 10px 25px;
   font-size: 17px;
   line-height: 19px;
   color: $white;
@@ -9,6 +9,10 @@
   background: $main-theme;
   outline: none;
   cursor: pointer;
+
+  &--wide {
+    min-width: 222px;
+  }
 
   @include hover {
     background: darken($main-theme, 10%);

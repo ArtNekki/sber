@@ -9,6 +9,10 @@
 
   &__field {
     margin-bottom: 15px;
+
+    .form--params-auto & {
+      margin-bottom: 32px;
+    }
   }
 
   &__input-group {
@@ -20,13 +24,21 @@
     }
   }
 
+  &__label {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    color: #373A3C;
+  }
+
   &__result {
     margin-top: 15px;
     color: $gray;
   }
 
   &__forgot-password {
-    text-align: center;
+    margin-top: 25px;
 
     .link,
     svg {
@@ -41,14 +53,9 @@
     }
   }
 
-  &__submit {
-    @extend .btn;
-
-    margin: 82px auto 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    min-width: 222px;
-    display: block;
+  &__footer {
+    margin-top: 82px;
+    text-align: center
   }
   
 }

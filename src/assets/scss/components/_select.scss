@@ -1,32 +1,38 @@
 .select {
   position: relative;
+  $arrow-height-large: 7px;
+  $arrow-height: 6px;
 
   &::before {
-    $arrow-height: 7px;
-
     content: "";
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 8px;
     transform: translateY(calc(-#{$arrow-height} / 2));
-    border-width: $arrow-height 5px;
+    border-width: $arrow-height 4px;
     border-style: solid;
-    border-color: $main-theme transparent transparent transparent;
+    border-color: #AFADAE transparent transparent transparent;
+
+    @include hover {
+      border-top-color: darken(#AFADAE, 10%);
+    }
   }
 
-  &:hover::before {
-    border-top-color: darken($main-theme, 10%);
+  &--category::before {
+    right: 15px;
+    transform: translateY(calc(-#{$arrow-height-large} / 2));
+    border-width: $arrow-height-large 5px;
   }
 
   &__field {
     margin: 0;
-    padding: 12px 37px 12px 18px;
     width: 100%;
+    padding: 6px 8px 6px 15px;
     font-family: $font-family;
-    font-size: 17px;
-    line-height: 19px;
-    color: $main-theme;
-    border: 1px solid $main-theme;
+    font-size: 16px;
+    line-height: 24px;
+    color: #999999;
+    border: 1px solid #cccccc;
     border-radius: $border-radius;
     background-color: $white;
     appearance: none;
@@ -34,8 +40,21 @@
     cursor: pointer;
 
     @include hover('.select') {
-      color: darken($main-theme, 10%);
-      border-color: darken($main-theme, 10%);
+      color: darken(#999999, 10%);
+      border-color: darken(#cccccc, 10%);
+    }
+
+    .select--category & {
+      padding: 12px 37px 12px 18px;
+      font-size: 17px;
+      line-height: 19px;
+      color: $main-theme;
+      border-color: $main-theme;
+
+      @include hover('.select') {
+        color: darken($main-theme, 10%);
+        border-color: darken($main-theme, 10%);
+      }
     }
   }
 }
