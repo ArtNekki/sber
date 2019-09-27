@@ -30,6 +30,7 @@
     }
 
     @include focus {
+      background: none;
       border-color: darken(#cccccc, 10%);
     }
     
