@@ -1,7 +1,14 @@
 .select {
-  position: relative;
   $arrow-height-large: 7px;
   $arrow-height: 6px;
+
+  position: relative;
+  border: 1px solid #cccccc;
+  border-radius: $border-radius;
+
+  &--category {
+    border-color: $main-theme;
+  }
 
   &::before {
     content: "";
@@ -32,8 +39,8 @@
     font-size: 16px;
     line-height: 24px;
     color: #999999;
-    border: 1px solid #cccccc;
-    border-radius: $border-radius;
+    border: none;
+    border-radius: inherit;
     background-color: $white;
     appearance: none;
     outline: none;
@@ -49,7 +56,6 @@
       font-size: 17px;
       line-height: 19px;
       color: $main-theme;
-      border-color: $main-theme;
 
       @include hover('.select') {
         color: darken($main-theme, 10%);

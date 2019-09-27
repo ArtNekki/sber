@@ -3,6 +3,12 @@
 
   position: relative;
   width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: $border-radius;
+
+  &--double {
+    display: flex;
+  }
 
   &__field {
     padding: 8px 10px 10px 10px;
@@ -13,9 +19,15 @@
     line-height: 19px;
     color: #999999;
     background: $white;
-    border: 1px solid #cccccc;
-    border-radius: $border-radius;
+    border: none;
+    border-radius: inherit;
     outline: none;
+    
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none; 
+      margin: 0;
+    }
 
     @include focus {
       border-color: darken(#cccccc, 10%);
@@ -24,13 +36,30 @@
     @include placeholder {
       color: #999999;
     }
+
+    .input--text-center & {
+      text-align: center;
+    }
   }
 
-  svg {
+  &__devider {
+    align-self: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: #999999;
+  }
+
+  &__meta {
     position: absolute;
     top: 50%;
     right: $padding-right;
     transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 24px;
+    color: #999999;
+  }
+
+  svg {
     fill: #AFADAE;
     cursor: pointer;
 

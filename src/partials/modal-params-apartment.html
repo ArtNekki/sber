@@ -1,0 +1,70 @@
+<article class="modal modal--params-apartment">
+  <div class="modal__content">
+    <h1 class="modal__title">Выберите нужные параметры</h1>
+    <form action="" class="form">
+      <div class="form__row">
+        <div class="form__col form__col--left">
+          <div class="form__label">Количество комнат<sup>*</sup></div>
+          <div class="form__field form__field--mg-top-lg">
+            {{> checkbox name="apartment-one-room" label="1-комнатные"}}
+          </div>
+          <div class="form__field">
+            {{> checkbox name="apartment-two-room" label="2-комнатные"}}
+          </div>
+        </div>
+        <div class="form__col form__col--right">
+            <div class="form__input-group">
+              <div class="form__field">
+                <label for="" class="form__label">Год постройки</label>
+                <div class="select">
+                  <select id="category" class="select__field">
+                    <option value="">2007</option>
+                    <option value="">2008</option> 
+                    <option value="">2009</option> 
+                  </select>
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="" class="form__label">Материал стен</label>
+                <div class="select">
+                  <select id="category" class="select__field">
+                    <option value="">Смешанный</option>
+                    <option value="">Смешанный</option> 
+                    <option value="">Смешанный</option> 
+                  </select>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="form__row">
+          <div class="form__col form__col--left">
+            <div class="form__field form__field--mg-top-lg">
+              {{> checkbox name="apartment-four-room" label="4-комнатные"}}
+            </div>
+            <div class="form__field">
+              {{> checkbox name="apartment-five-room" label="5-комнатные"}}
+            </div>
+          </div>
+          <div class="form__col form__col--right">
+              <div class="form__input-group">
+                <div class="form__field">
+                  <label for="" class="form__label">Этаж / этажность</label>
+                  {{> input-floor name="apartment-foor"}}
+                </div>
+                <div class="form__field">
+                  <label for="" class="form__label">Общая площадь</label>
+                  {{> input type="text" name="apartment-square" meta="м<sup>2</sup>" }}
+                </div>
+              </div>
+          </div>
+        </div>
+      <div class="form__footer">
+        <button class="btn">Показать</button>
+      </div>
+    </form>
+    <button class="modal__close">
+      {{{ icon name="close" width="13" height="14"}}}
+    </button>
+  </div>
+</article>
