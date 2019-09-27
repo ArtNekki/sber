@@ -1,0 +1,36 @@
+.files-list {
+  margin: 0;
+  margin-top: 65px;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    border-bottom: 2px solid #C4C4C4;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__label {
+    font-size: 17px;
+    line-height: 19px;
+
+    &--name {
+      color: $main-theme;
+    }
+
+    &--date {
+      color: #7D96AB;
+      line-height: 35px;
+    }
+  }
+
+  &__close {
+    @extend .close-btn;
+
+    top: 5px;
+    right: 0;
+  }
+}

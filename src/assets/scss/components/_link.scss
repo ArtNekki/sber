@@ -6,6 +6,7 @@
   line-height: 14px;
   color: $main-theme;
   text-decoration: none;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -17,6 +18,15 @@
 
     @include hover {
       opacity: 0;
+    }
+  }
+
+  &--file {
+    font-size: 14px;
+    color: #7D96AB;
+
+    &::before {
+      background-color: #7D96AB;
     }
   }
 }

@@ -36,21 +36,9 @@
   }
 
   &__close {
-    position: absolute;
+    @extend .close-btn;
+
     top: 21px;
     right: 18px;
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
-
-    svg {
-      fill: #DADADA;
-
-      @include hover {
-        fill: darken(#DADADA, 10%);
-      }
-    }
   }
 }

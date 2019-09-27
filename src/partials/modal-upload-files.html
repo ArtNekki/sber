@@ -1,0 +1,39 @@
+<article class="modal">
+  <div class="modal__content">
+    <h1 class="modal__title">Загрузите документы</h1>
+    <form action="" class="form form--login">
+      <div class="form__field">
+        {{> file}}
+      </div>
+      <ul class="files-list">
+        <li class="files-list__item">
+          <div class="files-list__label files-list__label--name">passport2.jpg</div>
+          <time datetime="20.09.2019" class="files-list__label files-list__label--date">Добавлено сегодня в 12:14</time>
+          <button class="files-list__close">
+            {{{ icon name="close" width="13" height="14"}}}
+          </button>
+        </li>
+        <li class="files-list__item">
+          <div class="files-list__label files-list__label--name">passport2.jpg</div>
+          <time datetime="20.09.2019" class="files-list__label files-list__label--date">Добавлено сегодня в 12:14</time>
+          <button class="files-list__close">
+            {{{ icon name="close" width="13" height="14"}}}
+          </button>
+        </li>
+        <li class="files-list__item">
+          <div class="files-list__label files-list__label--name">passport2.jpg</div>
+          <time datetime="20.09.2019" class="files-list__label files-list__label--date">Добавлено сегодня в 12:14</time>
+          <button class="files-list__close">
+            {{{ icon name="close" width="13" height="14"}}}
+          </button>
+        </li>
+      </ul>
+      <div class="form__footer">
+        <button type="submit" class="btn">Отправить</button>
+      </div>
+    </form>
+    <button class="modal__close">
+      {{{ icon name="close" width="13" height="14"}}}
+    </button>
+  </div>
+</article>

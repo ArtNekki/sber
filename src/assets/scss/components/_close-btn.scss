@@ -1,0 +1,16 @@
+.close-btn {
+  position: absolute;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+
+  svg {
+    fill: #DADADA;
+
+    @include hover {
+      fill: darken(#DADADA, 10%);
+    }
+  }
+}
