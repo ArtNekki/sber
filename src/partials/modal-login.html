@@ -6,7 +6,12 @@
         {{> input type="text" name="user-login" placeholder="Логин"}}
       </div>
       <div class="form__field">
-        {{> input type="password" name="user-password" placeholder="Пароль" iconName="eye" iconWidth="24" iconHeight="15" }}
+        <div class="input">
+          <input type="password" class="input__field" name="user-password" placeholder="Пароль" />
+          <span class="input__meta">
+              {{{ icon name="eye" width="24" height="15" height=iconHeight mods="eye" }}}
+          </span> 
+        </div>           
       </div>
       <div class="form__field">
         {{> checkbox name="rememberPassword" label="Запомнить пароль"}}

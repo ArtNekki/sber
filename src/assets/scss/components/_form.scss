@@ -50,8 +50,12 @@
   &__input-group {
     display: flex;
 
-    & > * {
+    &:not(&--category) > * {
       width: 100%;
+    }
+
+    &--category > *:not(:last-child) {
+      flex-grow: 1;
     }
 
     & > *:not(:last-child) {

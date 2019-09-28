@@ -6,8 +6,16 @@
   border: 1px solid $gray;
   border-radius: $border-radius;
 
+  &:hover {
+    border-color: darken($gray, 10%);
+  }
+
   &--category {
     border-color: $main-theme;
+
+    &:hover {
+      border-color: darken($main-theme, 10%);
+    }
   }
 
   &::before {
@@ -29,6 +37,11 @@
     right: 15px;
     transform: translateY(calc(-#{$arrow-height-large} / 2));
     border-width: $arrow-height-large 5px;
+    border-color: $main-theme transparent transparent transparent;
+
+    @include hover {
+      border-top-color: darken($main-theme, 10%);
+    }
   }
 
   &__field {
@@ -46,9 +59,8 @@
     outline: none;
     cursor: pointer;
 
-    @include hover('.select') {
+    .select:hover & {
       color: darken($gray-darken-2, 10%);
-      border-color: darken($gray, 10%);
     }
 
     .select--category & {
@@ -56,11 +68,10 @@
       font-size: $secondary-font-size;
       line-height: $secondary-line-height;
       color: $main-theme;
+    }
 
-      @include hover('.select') {
-        color: darken($main-theme, 10%);
-        border-color: darken($main-theme, 10%);
-      }
+    .select--category:hover & {
+      color: darken($main-theme, 10%);
     }
   }
 }
