@@ -12,16 +12,16 @@
     padding-left: 25px;
     display: block;
     font-family: $font-family;
-    font-size: 17px;
-    line-height: 19px;
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
     // font-size: $main-font-size;
     // line-height: $main-line-height;
     text-align: left;
-    color: #AFADAE;
+    color: $gray-darken-1;
     white-space: nowrap;
 
     @include hover {
-      color: darken(#AFADAE, 10%);
+      color: darken($gray-darken-1, 10%);
     }
 
     .checkbox__input:checked ~ & {
@@ -42,7 +42,7 @@
       width: 14px;
       height: 14px;
       box-sizing: border-box;
-      border: 1px solid #cccccc;
+      border: 1px solid $gray;
       border-radius: 2px;
 
       .checkbox__input:checked ~ & {

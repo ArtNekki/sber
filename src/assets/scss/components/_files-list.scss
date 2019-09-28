@@ -6,7 +6,7 @@
 
   &__item {
     position: relative;
-    border-bottom: 2px solid #C4C4C4;
+    border-bottom: 2px solid $gray-darken-0;
 
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -14,15 +14,15 @@
   }
 
   &__label {
-    font-size: 17px;
-    line-height: 19px;
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
 
     &--name {
       color: $main-theme;
     }
 
     &--date {
-      color: #7D96AB;
+      color: $gray-blue;
       line-height: 35px;
     }
   }

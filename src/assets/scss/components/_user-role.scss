@@ -87,15 +87,15 @@
 
   &__link {
     display: block;
-    color: gray;
+    color: $gray-blue;
     text-decoration: none;
 
     @include hover {
-      color: darken($gray, 25%);
+      color: darken($gray-blue, 25%);
     }
 
     @include active {
-      color: darken($gray, 25%);
+      color: darken($gray-blue, 25%);
     }
 
     svg,

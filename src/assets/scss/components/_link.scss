@@ -23,10 +23,10 @@
 
   &--file {
     font-size: 14px;
-    color: #7D96AB;
+    color: $gray-blue;
 
     &::before {
-      background-color: #7D96AB;
+      background-color: $gray-blue;
     }
   }
 }

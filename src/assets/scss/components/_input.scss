@@ -3,7 +3,7 @@
 
   position: relative;
   width: 100%;
-  border: 1px solid #cccccc;
+  border: 1px solid $gray;
   border-radius: $border-radius;
 
   &--double {
@@ -15,9 +15,9 @@
     padding-right: $padding-right;
     width: 100%;
     font-family: $font-family;
-    font-size: 17px;
-    line-height: 19px;
-    color: #999999;
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
+    color: $gray-darken-2;
     background: $white;
     border: none;
     border-radius: inherit;
@@ -31,11 +31,11 @@
 
     @include focus {
       background: none;
-      border-color: darken(#cccccc, 10%);
+      border-color: darken($gray-darken-2, 10%);
     }
     
     @include placeholder {
-      color: #999999;
+      color: $gray-darken-2;
     }
 
     .input--text-center & {
@@ -47,7 +47,7 @@
     align-self: center;
     font-size: 16px;
     line-height: 24px;
-    color: #999999;
+    color: $gray-darken-2;
   }
 
   &__meta {
@@ -57,15 +57,15 @@
     transform: translateY(-50%);
     font-size: 16px;
     line-height: 24px;
-    color: #999999;
+    color: $gray-darken-2;
   }
 
   svg {
-    fill: #AFADAE;
+    fill: $gray-darken-1;
     cursor: pointer;
 
     @include hover {
-      fill: darken(#AFADAE, 10%);
+      fill: darken($gray-darken-1, 10%);
     }
   }
 }
