@@ -3,13 +3,19 @@
   padding-left: 10px;
 
   &--login {
-    padding-right: 65px;
-    padding-left: 65px;
+    margin-right: 60px;
+    margin-left: 60px;
+    min-width: 360px;
   }
 
   &--params-apartment {
     padding-right: 75px;
     padding-left: 75px;
+    max-width: 730px;
+  }
+
+  &--upload-files {
+    min-width: 415px;
   }
 
   &__row {

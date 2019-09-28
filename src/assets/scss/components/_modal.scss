@@ -12,17 +12,17 @@
   &__content {
     position: relative;
     padding: 60px 30px 40px;
-    min-width: 540px;
-    min-height: 484px;
+    min-width: 440px;
+    min-height: 313px;
     background-color: $white;
     box-shadow: 5px 5px 10px rgba($black, 0.15);
 
-    .modal--params-auto & {
-      min-width: 440px;
-    }
-
-    .modal--params-apartment & {
-      max-width: 790px;
+    .modal--simple & {
+      min-width: 475px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -33,6 +33,17 @@
     line-height: 26px;
     color: $gray;
     text-align: center;
+
+    .modal--simple & {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 19px;
+    color: $gray;
   }
 
   &__close {
