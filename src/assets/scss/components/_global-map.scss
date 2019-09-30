@@ -1,0 +1,9 @@
+.global-map {
+
+  &__region {
+    &:hover,
+    &:hover > * {
+      fill: green;
+    }
+  }
+}
