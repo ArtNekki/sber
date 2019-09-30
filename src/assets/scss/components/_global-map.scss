@@ -1,9 +1,71 @@
 .global-map {
+  position: relative;
+  margin-top: 15px;
+  text-align: center;
+
+  &__title {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 24px;
+    line-height: 26px;
+    color: $gray-blue;
+  }
 
   &__region {
+    cursor: pointer;
+
     &:hover,
     &:hover > * {
-      fill: green;
+      fill: $main-theme;
+    }
+  }
+
+  &__summary {
+    margin: 65px auto 0;
+    padding: 0;
+    max-width: 790px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__summary-item {
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
+    color: $gray-blue;
+      
+    &::before {
+      content: "";
+      margin-right: 7px;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &--xs::before {
+      background-color: #CEDFEC;
+    }
+
+    &--sm::before {
+      background-color: #AAD6F8;
+    }
+
+    &--md::before {
+      background-color: #54ACF2;
+    }
+
+    &--lg::before {
+      background-color: #3D80B5;
+    }
+
+    &--xl::before {
+      background-color: #0C60A2;
+    }
+
+    span {
+      vertical-align: middle;
     }
   }
 }
