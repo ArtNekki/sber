@@ -1,48 +1,81 @@
-// import createHTMLMapMarker from './HtmlMapMarker';
-// import { generateMarkTemplate } from './MarkerTemplate';
-// import markerCoords from '../../../../data/markerCoords.json';
+import Popper from 'popper.js';
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const html = this.documentElement;
-//   const mapContainer = document.getElementById("map");
+console.log('popper', Popper);
 
-//   if(!mapContainer) return;
+import createHTMLMapMarker from './HtmlMapMarker';
+import { generateMarkerTemplate } from './MarkerTemplate';
+
+//data
+import markers from '../../../../data/markerCoords.json';
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mapPopupQuery = '.region-map__popup';
+  const mapContainer = document.getElementById("region-map");
+  const mapPopup = document.querySelector(mapPopupQuery);
+
+  console.log('pp', mapPopup);
+
+  if(!mapContainer) return;
     
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 4,
-//     center: new google.maps.LatLng(marks[0].coords.lat, marks[0].coords.lng)
-//   });
+  const map = new google.maps.Map(mapContainer, {
+    zoom: 4,
+    center: new google.maps.LatLng(markers[0].coords.lat, markers[0].coords.lng),
+    disableDefaultUI: true
+  });
 
-//   marks.forEach((mark) => {
-//     createHTMLMapMarker({
-//         latlng: new google.maps.LatLng(mark.coords.lat, mark.coords.lng),
-//         map: map,
-//         html: generateMarkTemplate(mark.id, mark.count)
-//     });
-//   });
+  markers.forEach((marker) => {
+    createHTMLMapMarker({
+        latlng: new google.maps.LatLng(marker.coords.lat, marker.coords.lng),
+        map: map,
+        html: generateMarkerTemplate(marker.id, marker.count)
+    });
+  });
 
-//   let activeMark = null;
 
-//   document.addEventListener('click', function(e) {
-//     const mark = e.target.closest('.mark');
+  let activeMarker = null;
+  let popper = null;
 
-//     if(mark) {
-    
-//       if (activeMark) {
-//         activeMark.classList.remove('mark--active');
-//         activeMark = null;
-//       }
+  document.addEventListener('mouseover', function(e) {
+    const marker = e.target.closest('.region-map__marker');
 
-//       activeMark = mark;
-//       activeMark.classList.add('mark--active');
+    if(marker) {
 
-//       html.classList.add('page--marker-active');
-//     };
+      if (activeMarker) {
+        activeMarker.classList.remove('region-map__marker--active');
+        activeMarker = null;
+      }
+  
+      activeMarker = marker;
+      activeMarker.classList.add('region-map__marker--active');
+  
+      mapContainer.parentNode.classList.add('region-map--marker-active');
+  
+      popper = new Popper(marker, mapPopup, {
+        placement: 'left',
+        modifiers: {
+          flip: {
+              behavior: ['left', 'bottom', 'top', 'right']
+          },
+          preventOverflow: {
+              boundariesElement: mapContainer,
+          }
+        }
+      });
 
-//   });
+      console.log(popper)
 
-//   document.querySelector('[data-close-panel]').addEventListener('click', function() {
-//     html.classList.remove('page--marker-active');
-//     activeMark.classList.remove('mark--active');
-//   });
-// });
+    } else if (!marker && !e.target.closest(mapPopupQuery)) {
+      mapContainer.parentNode.classList.remove('region-map--marker-active');
+      
+      if(activeMarker) {
+        activeMarker.classList.remove('region-map__marker--active');
+      }
+      
+      if(popper) {
+        popper.destroy();
+      }
+    }
+
+  });
+});
+

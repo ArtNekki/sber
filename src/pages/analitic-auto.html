@@ -1,0 +1,96 @@
+<main class="page-main">
+    <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав</h2>
+    <div class="form">
+      <div class="form__input-group form__input-group--category">
+        <div class="select select--category">
+          <select id="category" class="select__field">
+            <option value="">Выберите категорию</option>
+            <option value="">Выберите категорию</option> 
+            <option value="">Выберите категорию</option> 
+          </select>
+        </div>
+        <div class="select select--category">
+          <select id="category" class="select__field">
+            <option value="">Выберите категорию</option>
+            <option value="">Выберите категорию</option> 
+            <option value="">Выберите категорию</option> 
+          </select>
+        </div>
+        <button type="button" class="btn">Показать</button>
+      </div>
+      <div class="form__result">1-комнатные, 2007 год постройки, кирпичный, 14/14 этаж, 32м²</div>
+    </div>
+    <div id="info-bar" class="info-bar">
+      <div class="info-bar__item">
+        <div class="info-bar__label">средне-рыночная стоимость<br />по РФ</div>
+        <div class="info-bar__data">30 986 ₽/м²</div>
+      </div>
+      <div class="info-bar__item">
+          <div class="info-bar__label">средне-рыночная стоимость<br />по региону</div>
+          <div class="info-bar__data">30 986 ₽/м²</div>
+        </div>
+    </div>
+    <div class="region-map">
+      <div id="region-map" class="region-map__content"></div>
+      <div class="region-map__popup">
+        <article class="map-result">
+          <table class="map-result__details">
+            <tr>
+              <td colspan="3">
+                <small class="map-result__label">Регион</small>
+                <div class="map-result__data">Ханты-Мансийский автономный округ</div>
+              </td>
+              <td>
+                <small class="map-result__label">Год выпуска</small>
+                <div class="map-result__data">2015</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <small class="map-result__label">Марка</small>
+                <div class="map-result__data">Volkswagen</div>
+              </td>
+              <td>
+                <small class="map-result__label">Тип</small>
+                <div class="map-result__data">Легковой автомобиль</div>
+              </td>
+              <td>
+                <small class="map-result__label">Тип кузова</small>
+                <div class="map-result__data">Минивэн</div>
+              </td>
+              <td>
+                <small class="map-result__label">Кпп</small>
+                <div class="map-result__data">Автоматическая</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <small class="map-result__label">Модель</small>
+                <div class="map-result__data">Урал</div>
+              </td>
+              <td>
+                <small class="map-result__label">Двигатель</small>
+                <div class="map-result__data">Дизель</div>
+              </td>
+              <td colspan="2">
+                <small class="map-result__label">VIN</small>
+                <div class="map-result__data">WV2ZZZ7H*GH****81</div>
+              </td>
+            </tr>
+          </table>
+          <div class="map-result__description">
+            <div class="map-result__img">
+              <img src="{{root}}/assets/img/content/auto-info@3x.jpg" width="253" height="238" srcset=" {{root}}/assets/img/content/auto-info.jpg 1x, {{root}}/assets/img/content/auto-info@2x.jpg 2x" alt="Volkswagen">
+            </div>
+            <div class="map-result__description-content">
+              <h4 class="map-result__title">Описание</h4>
+              <p class="map-result__text">Продажа автомобиля до 10.08.2019!!! Без торга!<br />
+                В салон на реализацию ставить не буду. Продажа только конечному клиенту, на сделке при передаче денег вписываем вас в ПТC
+              </p>
+              <time datetime="" class="map-result__date">22.07.2019</time>
+            </div>
+          </div>
+         </article>
+      </div>
+    </div>
+  </main>

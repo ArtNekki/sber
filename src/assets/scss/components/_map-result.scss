@@ -1,0 +1,81 @@
+.map-result {
+  $space-x: 15px;
+
+  &__details {
+    width: 100%;
+
+    td {
+      padding-right: $space-x;
+      padding-left: $space-x;
+      padding-bottom: 20px;
+      // width: 25%;
+      vertical-align: top;
+    }
+
+    tr:first-child td {
+      padding-bottom: 40px;
+    }
+  }
+  
+  &__label {
+    margin-bottom: 10px;
+    display: block;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    color: $gray-darken-1;
+  }
+
+  &__data {
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
+    color: $gray-blue;
+  }
+
+  &__description {
+    margin-top: 20px;
+    padding-right: $space-x;
+    padding-left: $space-x;
+    display: flex;
+  }
+  
+  &__description-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 253px;
+    height: 238px;
+    margin-right: 50px;
+
+    img {
+      width: inherit;
+      height: inherit;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
+    font-weight: 400;
+    color: $gray-blue;
+  }
+
+  &__text {
+    font-family: $font-family;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    color: $gray-blue;
+  }
+
+  &__date {
+    margin-top: auto;
+    font-size: $secondary-font-size;
+    line-height: $secondary-line-height;
+    color: $gray-blue;
+  }
+}

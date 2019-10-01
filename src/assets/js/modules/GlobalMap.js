@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const infobar = document.getElementById('info-bar');
     // const mapTitle = map.querySelector('.global-map__title');
 
-    map.addEventListener('mouseover', function(e) {
+    if(map) {
+      map.addEventListener('mouseover', function(e) {
         const region = e.target.closest('[data-region]');
         
         if(region) {
@@ -214,4 +215,5 @@ document.addEventListener('DOMContentLoaded', function() {
           mapTitle = null;
         } 
     });
+  }
 })
