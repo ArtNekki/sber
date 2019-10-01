@@ -1,0 +1,36 @@
+.tags {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 0;
+
+  &__item {
+    margin: 4px 0;
+    padding: 7px 8px;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 14px;
+    text-decoration: none;
+    color: #1E1E1E;
+    background-color: #ECEEEF;
+    border-radius: 40px;
+
+    &:not(:last-child) {
+      margin-right: 9px;
+    }
+
+    @include hover {
+      color: $white;
+      background: $main-theme;
+    }
+
+    @include active {
+      color: $white;
+      background: $main-theme;
+    }
+
+    &--active {
+      color: $white;
+      background: $main-theme;
+    }
+  }
+}
