@@ -1,5 +1,5 @@
-<div class="input">
-  <input type="{{ type }}" class="input__field" name="{{ name }}" placeholder="{{ placeholder }}" />
+<div class="input {{ mod }}">
+  <input type="{{ type }}" class="input__field" name="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}" />
   {{#if iconName}}
     {{{ icon name=iconName width=iconWidth height=iconHeight mods=iconName }}}
   {{/if}}

@@ -45,10 +45,15 @@
     &--mg-top-lg {
       margin-top: 19px;
     }
+
+    .form__input-group:last-child & {
+      margin-bottom: 0;
+    }
   }
 
   &__input-group {
     display: flex;
+    align-items: flex-end;
 
     &:not(&--category) > * {
       width: 100%;

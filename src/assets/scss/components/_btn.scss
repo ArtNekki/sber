@@ -14,6 +14,11 @@
     min-width: 222px;
   }
 
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+
   @include hover {
     background: darken($main-theme, 10%);
   }

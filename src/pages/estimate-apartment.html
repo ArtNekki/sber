@@ -1,90 +1,110 @@
 <main class="page-main">
-    <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав</h2>
-    <div class="toolbar">
-      <div class="toolbar__item">
-        <button class="toolbar__action">
-          {{{ icon name="update" width="29" height="29" }}}
-          <span class="toolbar__text">обновить <br /> очередь</span>
-        </button>
-      </div>
-      <div class="toolbar__item">
-        <button class="toolbar__action">
-          {{{ icon name="xls" width="25" height="31" }}}
-          <span class="toolbar__text">скачать <br /> файл</span>
-        </button>
-      </div>
-      <div class="toolbar__item">
-        <button class="toolbar__action">
-          {{{ icon name="new" width="28" height="28" }}}
-          <span class="toolbar__text">Создать <br /> новый запрос</span>
-        </button>
-      </div>
-      <div class="toolbar__item">
-        <span class="toolbar__counter toolbar__counter--total">4 368</span>
-        <span class="toolbar__text">всего <br /> запросов</span>
-      </div>
-      <div class="toolbar__item">
-          <span class="toolbar__counter toolbar__counter--category">368</span>
-          <span class="toolbar__text">всего <br /> запросов</span>
-      </div>
+  <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав
+  </h2>
+  <div class="toolbar">
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="update" width="29" height="29" }}}
+        <span class="toolbar__text">обновить <br /> очередь</span>
+      </button>
     </div>
-    <div class="tags">
-      <a href="#" class="tags__item">Квартира/апартаменты</a>
-      <a href="#" class="tags__item">Комнаты/доля в квартире</a>
-      <a href="#" class="tags__item">З/у (для индив.пользования)</a>
-      <a href="#" class="tags__item">З/у с индиви.жил.домом</a>
-      <a href="#" class="tags__item">Автотранспорт</a>
-      <a href="#" class="tags__item">Гаражи/машиноместа </a>
-      <a href="#" class="tags__item">Спецтехника и самоходные механизмы</a>
-      <a href="#" class="tags__item">Технологические линии </a>
-      <a href="#" class="tags__item">Коммерция < 100 м<sup>2</sup></a>
-      <a href="#" class="tags__item">Коммерция 101–300 м<sup>2</sup></a>
-      <a href="#" class="tags__item">Коммерция 301–1000 м<sup>2</sup></a>
-      <a href="#" class="tags__item">Коммерция 1001–3000 м<sup>2</sup></a>
-      <a href="#" class="tags__item">Коммерция 3001–5000 м<sup>2</sup></a>
-      <a href="#" class="tags__item">Спец.оборудование до 10 ед.объектов</a>
-      <a href="#" class="tags__item">Спец.оборудование > 11 ед.объектов</a>
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="xls" width="25" height="31" }}}
+        <span class="toolbar__text">скачать <br /> файл</span>
+      </button>
     </div>
-    
-    <!-- <div class="region-map">
-      <div id="region-map" class="region-map__content"></div>
-      <div class="region-map__popup">
-        <article class="map-result">
-          <table class="map-result__details">
-            <tr>
-              <td>
-                <small class="map-result__label">Площадь</small>
-                <div class="map-result__data">36 м <sup>2</sup></div>
-              </td>
-              <td>
-                <small class="map-result__label">Этаж / Этажность</small>
-                <div class="map-result__data">6 / 12 этаж</div>
-              </td>
-              <td>
-                <small class="map-result__label">Отделка</small>
-                <div class="map-result__data">Чистовая</div>
-              </td>
-              <td>
-                <small class="map-result__label">Цена</small>
-                <div class="map-result__data">3 548 254 ₽ /</div>
-                <div class="map-result__data map-result__data--small">98 255 ₽ / м <sup>2</sup></div>
-              </td>
-            </tr>
-          </table>
-          <div class="map-result__description">
-            <div class="map-result__img">
-              <img src="{{root}}/assets/img/content/apartment-info@3x.jpg" width="253" height="238" srcset=" {{root}}/assets/img/content/apartment-info.jpg 1x, {{root}}/assets/img/content/apartment-info@2x.jpg 2x" alt="Volkswagen">
-            </div>
-            <div class="map-result__description-content">
-              <h4 class="map-result__title">Описание</h4>
-              <p class="map-result__text">
-                  Чистая, красивая, кондиционеры, двери, есть гардеробная, санузел раздел ьный. Чистая, красивая, кондиционеры, двери, есть гардеробная, 
-                  санузел раздельный.Чистая, красивая, кондиционеры, двери, есть гардеробная, санузел раздельный.
-              </p>
-              <time datetime="" class="map-result__date">22.07.2019</time>
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="new" width="28" height="28" }}}
+        <span class="toolbar__text">Создать <br /> новый запрос</span>
+      </button>
+    </div>
+    <div class="toolbar__item">
+      <span class="toolbar__counter toolbar__counter--total">4 368</span>
+      <span class="toolbar__text">всего <br /> запросов</span>
+    </div>
+    <div class="toolbar__item">
+      <span class="toolbar__counter toolbar__counter--category">368</span>
+      <span class="toolbar__text">всего <br /> запросов</span>
+    </div>
+  </div>
+  <div class="tags">
+    <a href="#" class="tags__item">Квартира/апартаменты</a>
+    <a href="#" class="tags__item">Комнаты/доля в квартире</a>
+    <a href="#" class="tags__item">З/у (для индив.пользования)</a>
+    <a href="#" class="tags__item">З/у с индиви.жил.домом</a>
+    <a href="#" class="tags__item">Автотранспорт</a>
+    <a href="#" class="tags__item">Гаражи/машиноместа </a>
+    <a href="#" class="tags__item">Спецтехника и самоходные механизмы</a>
+    <a href="#" class="tags__item">Технологические линии </a>
+    <a href="#" class="tags__item">Коммерция < 100 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 101–300 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 301–1000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 1001–3000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 3001–5000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Спец.оборудование до 10 ед.объектов</a>
+    <a href="#" class="tags__item">Спец.оборудование > 11 ед.объектов</a>
+  </div>
+  <div class="object-details">
+    <div class="object-details__left">
+      <form action="" class="form">
+        <div class="form__field">
+          <label for="" class="form__label">Адрес объекта недвижимости</label>
+          {{> input type="text" name="object-address" value="Новгород, ул. Чудинцева, д.1, кв.4"}}
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Общая площадь</label>
+            {{> input type="number" name="object-area" value="68" meta="м<sup>2</sup>" mod="input--text-center"}}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Год постройки</label>
+            {{> input type="number" name="object-year" value="1994" mod="input--text-center"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Стоимость</label>
+            {{> input type="number" name="object-cost" value="5255454" meta="&#8381;" mod="input--text-center"}}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Количество комнат</label>
+            {{> input type="number" name="object-rooms-count" value="3" mod="input--text-center"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Материал стен </label>
+            <div class="select" name="object-material">
+              <select id="category" class="select__field">
+                <option value="#">Монолит / кирпич</option>
+                <option value="#">Монолит / кирпич</option>
+                <option value="#">Монолит / кирпич</option>
+              </select>
             </div>
           </div>
-         </article>
+          <div class="form__field">
+            <label for="" class="form__label">Этаж / этажность</label>
+            {{> input-floor name="object-floor"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Загрузить документы</label>
+            {{> input type="text" name="object-file" }}
+          </div>
+          <div class="form__field">
+            <button type="submit" class="btn btn--full-width">Рассчитать</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="object-details__right">
+      <div class="object-details__label">Местоположение</div>
+      <div class="region-map region-map--single">
+        <div id="region-map" class="region-map__content"></div>
       </div>
-    </div> -->
-  </main>
+    </div>
+  </div>
+</main>
