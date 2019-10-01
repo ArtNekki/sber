@@ -8,7 +8,7 @@
       padding-right: $space-x;
       padding-left: $space-x;
       padding-bottom: 20px;
-      // width: 25%;
+      width: 25%;
       vertical-align: top;
     }
 
@@ -29,6 +29,11 @@
     font-size: $secondary-font-size;
     line-height: $secondary-line-height;
     color: $gray-blue;
+
+    &--small {
+      font-size: $main-font-size;
+      line-height: 22px;
+    }
   }
 
   &__description {

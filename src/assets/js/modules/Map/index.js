@@ -62,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      console.log(popper)
-
     } else if (!marker && !e.target.closest(mapPopupQuery)) {
       mapContainer.parentNode.classList.remove('region-map--marker-active');
       

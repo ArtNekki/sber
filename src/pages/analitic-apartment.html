@@ -1,0 +1,74 @@
+<main class="page-main">
+    <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав</h2>
+    <div class="form">
+      <div class="form__input-group form__input-group--category">
+        <div class="select select--category">
+          <select id="category" class="select__field">
+            <option value="">Выберите категорию</option>
+            <option value="">Выберите категорию</option> 
+            <option value="">Выберите категорию</option> 
+          </select>
+        </div>
+        <div class="select select--category">
+          <select id="category" class="select__field">
+            <option value="">Выберите категорию</option>
+            <option value="">Выберите категорию</option> 
+            <option value="">Выберите категорию</option> 
+          </select>
+        </div>
+        <button type="button" class="btn">Показать</button>
+      </div>
+      <div class="form__result">1-комнатные, 2007 год постройки, кирпичный, 14/14 этаж, 32м²</div>
+    </div>
+    <div id="info-bar" class="info-bar">
+      <div class="info-bar__item">
+        <div class="info-bar__label">средне-рыночная стоимость<br />по РФ</div>
+        <div class="info-bar__data">30 986 ₽/м²</div>
+      </div>
+      <div class="info-bar__item">
+          <div class="info-bar__label">средне-рыночная стоимость<br />по региону</div>
+          <div class="info-bar__data">30 986 ₽/м²</div>
+        </div>
+    </div>
+    <div class="region-map">
+      <div id="region-map" class="region-map__content"></div>
+      <div class="region-map__popup">
+        <article class="map-result">
+          <table class="map-result__details">
+            <tr>
+              <td>
+                <small class="map-result__label">Площадь</small>
+                <div class="map-result__data">36 м <sup>2</sup></div>
+              </td>
+              <td>
+                <small class="map-result__label">Этаж / Этажность</small>
+                <div class="map-result__data">6 / 12 этаж</div>
+              </td>
+              <td>
+                <small class="map-result__label">Отделка</small>
+                <div class="map-result__data">Чистовая</div>
+              </td>
+              <td>
+                <small class="map-result__label">Цена</small>
+                <div class="map-result__data">3 548 254 ₽ /</div>
+                <div class="map-result__data map-result__data--small">98 255 ₽ / м <sup>2</sup></div>
+              </td>
+            </tr>
+          </table>
+          <div class="map-result__description">
+            <div class="map-result__img">
+              <img src="{{root}}/assets/img/content/apartment-info@3x.jpg" width="253" height="238" srcset=" {{root}}/assets/img/content/apartment-info.jpg 1x, {{root}}/assets/img/content/apartment-info@2x.jpg 2x" alt="Volkswagen">
+            </div>
+            <div class="map-result__description-content">
+              <h4 class="map-result__title">Описание</h4>
+              <p class="map-result__text">
+                  Чистая, красивая, кондиционеры, двери, есть гардеробная, санузел раздел ьный. Чистая, красивая, кондиционеры, двери, есть гардеробная, 
+                  санузел раздельный.Чистая, красивая, кондиционеры, двери, есть гардеробная, санузел раздельный.
+              </p>
+              <time datetime="" class="map-result__date">22.07.2019</time>
+            </div>
+          </div>
+         </article>
+      </div>
+    </div>
+  </main>
