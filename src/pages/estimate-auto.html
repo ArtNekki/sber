@@ -1,0 +1,248 @@
+<main class="page-main">
+  <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав
+  </h2>
+  <div class="toolbar">
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="update" width="29" height="29" }}}
+        <span class="toolbar__text">обновить <br /> очередь</span>
+      </button>
+    </div>
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="xls" width="25" height="31" }}}
+        <span class="toolbar__text">скачать <br /> файл</span>
+      </button>
+    </div>
+    <div class="toolbar__item">
+      <button class="toolbar__action">
+        {{{ icon name="new" width="28" height="28" }}}
+        <span class="toolbar__text">Создать <br /> новый запрос</span>
+      </button>
+    </div>
+    <div class="toolbar__item">
+      <span class="toolbar__counter toolbar__counter--total">4 368</span>
+      <span class="toolbar__text">всего <br /> запросов</span>
+    </div>
+    <div class="toolbar__item">
+      <span class="toolbar__counter toolbar__counter--category">368</span>
+      <span class="toolbar__text">всего <br /> запросов</span>
+    </div>
+  </div>
+  <div class="tags">
+    <a href="#" class="tags__item">Квартира/апартаменты</a>
+    <a href="#" class="tags__item">Комнаты/доля в квартире</a>
+    <a href="#" class="tags__item">З/у (для индив.пользования)</a>
+    <a href="#" class="tags__item">З/у с индиви.жил.домом</a>
+    <a href="#" class="tags__item">Автотранспорт</a>
+    <a href="#" class="tags__item">Гаражи/машиноместа </a>
+    <a href="#" class="tags__item">Спецтехника и самоходные механизмы</a>
+    <a href="#" class="tags__item">Технологические линии </a>
+    <a href="#" class="tags__item">Коммерция < 100 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 101–300 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 301–1000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 1001–3000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Коммерция 3001–5000 м<sup>2</sup></a>
+    <a href="#" class="tags__item">Спец.оборудование до 10 ед.объектов</a>
+    <a href="#" class="tags__item">Спец.оборудование > 11 ед.объектов</a>
+  </div>
+  <div class="object-details">
+    <div class="object-details__left">
+      <form action="" class="form">
+        <div class="form__field">
+          <label for="" class="form__label">Адрес объекта недвижимости</label>
+          {{> input type="text" name="object-address" value="Новгород, ул. Чудинцева, д.1, кв.4"}}
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Общая площадь</label>
+            {{> input type="number" name="object-area" value="68" meta="м<sup>2</sup>" mod="input--text-center"}}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Год постройки</label>
+            {{> input type="number" name="object-year" value="1994" mod="input--text-center"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Стоимость</label>
+            {{> input type="number" name="object-cost" value="5255454" meta="&#8381;" mod="input--text-center"}}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Количество комнат</label>
+            {{> input type="number" name="object-rooms-count" value="3" mod="input--text-center"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Материал стен </label>
+            <div class="select" name="object-material">
+              <select id="category" class="select__field">
+                <option value="#">Монолит / кирпич</option>
+                <option value="#">Монолит / кирпич</option>
+                <option value="#">Монолит / кирпич</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Этаж / этажность</label>
+            {{> input-floor name="object-floor"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Загрузить документы</label>
+            {{> input type="text" name="object-file" }}
+          </div>
+          <div class="form__field">
+            <button type="submit" class="btn btn--full-width">Рассчитать</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="object-details__right">
+      <div class="object-details__label">Местоположение</div>
+      <div class="region-map region-map--single">
+        <div id="region-map" class="region-map__content"></div>
+      </div>
+    </div>
+  </div>
+  <div id="table-scroll" class="table-scroll">
+    <div class="table-scroll-content">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <span class="table__label">Дата запроса</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Дата ответа</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">ID обьекта</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th class="table__dropdown">
+              {{{ dropdown id="dropdown-status" label="Статус" items='[{ "name": "Отправлен"}, { "name": "Ожидает ответа"}, { "name": "Обработан"}]' }}}
+            </th>
+            <th class="table__dropdown">
+              {{{ dropdown id="dropdown-auto-type" label="Тип ТС" items='[{ "name": "Легковые" }, { "name": "Грузовые" }, { "name": "Грузопасcажирские" }, { "name": "Автобусы" }, { "name": "Спецтранспорт" }]' }}}
+            </th>
+            <th>
+              <span class="table__label">Город</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th class="table__wide-sm">
+              <span class="table__label">Регион</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th class="table__dropdown">
+              {{{ dropdown id="dropdown-vin" label="VIN" items='[{ "name": "4USBT53544LT26841"}, { "name": "KL1UF756E6B195928"}, { "name": "ZFA18800004473122"}]' }}}
+            </th>
+            <th>
+              <span class="table__label">Марка</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Год выпуска</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Модель</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Тип кузова</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Двигатель</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th class="table__dropdown">
+              {{{ dropdown id="dropdown-kpp" label="КПП" items='[{ "name": "МКПП"}, { "name": "АКПП"}, { "name": "РКПП"}]' }}}
+            </th>
+            <th>
+              <span class="table__label">Стоимость<br /> авто, &#8381;</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Стоимость <br /> по отчету, &#8381;</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+            <th>
+              <span class="table__label">Дельта, &#8381;</span>
+              {{{ icon name="search" width="14" height="14" }}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>22.07.2019</td>
+            <td>22.07.2019</td>
+            <td>26514541</td>
+            <td>Ожидает ответа</td>
+            <td>Легковые</td>
+            <td>Александровск-Сахалинский</td>
+            <td>Карачаево-Черкесская Республика</td>
+            <td>4USBT53544LT26841</td>
+            <td>Mercedes-Benz</td>
+            <td>2010</td>
+            <td>Maybach S-klasse</td>
+            <td>Внедорожник 5дв.</td>
+            <td>Газобалло-новое оборудование</td>
+            <td>МКПП</td>
+            <td>2 588 48</td>
+            <td>2 388 48</td>
+            <td>939,9</td>
+          </tr>
+          <tr>
+            <td>22.07.2019</td>
+            <td>22.07.2019</td>
+            <td>26514541</td>
+            <td>Ожидает ответа</td>
+            <td>Легковые</td>
+            <td>Александровск-Сахалинский</td>
+            <td>Карачаево-Черкесская Республика</td>
+            <td>4USBT53544LT26841</td>
+            <td>Mercedes-Benz</td>
+            <td>2010</td>
+            <td>Maybach S-klasse</td>
+            <td>Внедорожник 5дв.</td>
+            <td>Газобалло-новое оборудование</td>
+            <td>МКПП</td>
+            <td>2 588 48</td>
+            <td>2 388 48</td>
+            <td>939,9</td>
+          </tr>
+          <tr>
+            <td>22.07.2019</td>
+            <td>22.07.2019</td>
+            <td>26514541</td>
+            <td>Ожидает ответа</td>
+            <td>Легковые</td>
+            <td>Александровск-Сахалинский</td>
+            <td>Карачаево-Черкесская Республика</td>
+            <td>4USBT53544LT26841</td>
+            <td>Mercedes-Benz</td>
+            <td>2010</td>
+            <td>Maybach S-klasse</td>
+            <td>Внедорожник 5дв.</td>
+            <td>Газобалло-новое оборудование</td>
+            <td>МКПП</td>
+            <td>2 588 48</td>
+            <td>2 388 48</td>
+            <td>939,9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-scroll-track">
+      <div class="table-scroll-free">
+        <div class="table-scroll-bar"></div>
+      </div>
+    </div>
+  </div>
+</main>

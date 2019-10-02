@@ -1,6 +1,8 @@
 .dropdown {
+  $dropdown-width: 100px;
+
   position: relative;
-  min-width: 100px;
+  min-width: $dropdown-width;
 
   &__input {
     display: none;
@@ -18,6 +20,24 @@
     color: $main-theme;
     outline: none;
     cursor: pointer;
+
+    &::before {
+      $height: 10px;
+  
+      content: "";
+      position: absolute;
+      top: calc(100% - #{$height} / 2);
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: none;
+      height: $height;
+      background: $white;
+
+      .dropdown__input:checked ~ & {
+        display: block;
+      }
+    }
 
     &:hover {
       color: darken($main-theme, 10%);
@@ -53,27 +73,15 @@
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    // right: 0;
     z-index: 5;
     margin: 0;
     padding: 12px;
+    min-width: 100%;
     display: none;
     background-color: $white;
     list-style: none;
     box-shadow: $box-shadow;
-
-    &::before {
-      $height: 10px;
-
-      content: "";
-      position: absolute;
-      top: calc(-#{$height} / 2);
-      left: 0;
-      right: 0;
-      height: $height;
-      background: $white;
-
-    }
 
     .dropdown__input:checked ~ & {
       display: block;

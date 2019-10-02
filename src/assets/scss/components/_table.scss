@@ -16,6 +16,7 @@
 
   th {
     padding-top: 18px;
+    padding-bottom: 10px;
     white-space: nowrap;
     text-align: left;
     vertical-align: top;
@@ -32,11 +33,16 @@
     &.table__wide {
       min-width: 250px;
     }
+
+    &.table__wide-sm {
+      min-width: 180px;
+    }
   }
 
   td {
     padding-top: 8px;
     padding-bottom: 10px;
+    vertical-align: top;
   }
 
   tr {
