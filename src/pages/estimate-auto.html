@@ -50,49 +50,70 @@
     <div class="object-details__left">
       <form action="" class="form">
         <div class="form__field">
-          <label for="" class="form__label">Адрес объекта недвижимости</label>
-          {{> input type="text" name="object-address" value="Новгород, ул. Чудинцева, д.1, кв.4"}}
+          <label for="" class="form__label">Регион</label>
+          {{> input type="text" name="car-region" value="Ямало-Ненецкий автономный округ"}}
         </div>
         <div class="form__input-group">
           <div class="form__field">
-            <label for="" class="form__label">Общая площадь</label>
-            {{> input type="number" name="object-area" value="68" meta="м<sup>2</sup>" mod="input--text-center"}}
+            <label for="" class="form__label">VIN</label>
+            {{> input type="text" name="car-vin" value="ZFA18800004473122" }}
           </div>
           <div class="form__field">
-            <label for="" class="form__label">Год постройки</label>
-            {{> input type="number" name="object-year" value="1994" mod="input--text-center"}}
-          </div>
-        </div>
-        <div class="form__input-group">
-          <div class="form__field">
-            <label for="" class="form__label">Стоимость</label>
-            {{> input type="number" name="object-cost" value="5255454" meta="&#8381;" mod="input--text-center"}}
-          </div>
-          <div class="form__field">
-            <label for="" class="form__label">Количество комнат</label>
-            {{> input type="number" name="object-rooms-count" value="3" mod="input--text-center"}}
+            <label for="" class="form__label">Год выпуска</label>
+            {{> input type="number" name="car-year" value="2018" mod="input--text-center"}}
           </div>
         </div>
         <div class="form__input-group">
           <div class="form__field">
-            <label for="" class="form__label">Материал стен </label>
-            <div class="select" name="object-material">
+            <label for="" class="form__label">Марка</label>
+            {{> input type="text" name="car-make" value="SsangYong" }}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">Модель</label>
+            {{> input type="text" name="car-model" value="Korando Turismo"}}
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Тип транспортного средства</label>
+            <div class="select" name="car-type">
               <select id="category" class="select__field">
-                <option value="#">Монолит / кирпич</option>
-                <option value="#">Монолит / кирпич</option>
-                <option value="#">Монолит / кирпич</option>
+                <option value="#">Спецтранспорт</option>
+                <option value="#">Легковой</option>
+                <option value="#">Грузовой</option>
               </select>
             </div>
           </div>
           <div class="form__field">
-            <label for="" class="form__label">Этаж / этажность</label>
-            {{> input-floor name="object-floor"}}
+            <label for="" class="form__label">Двигатель</label>
+            <div class="select" name="car-motor">
+              <select id="category" class="select__field">
+                <option value="#">Бензиновый</option>
+                <option value="#">Дизельный</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="form__input-group">
           <div class="form__field">
             <label for="" class="form__label">Загрузить документы</label>
-            {{> input type="text" name="object-file" }}
+            {{> input type="text" name="car-file" }}
+          </div>
+          <div class="form__field">
+            <label for="" class="form__label">КПП</label>
+            <div class="select" name="car-transmition">
+              <select id="category" class="select__field">
+                <option value="#">МКПП</option>
+                <option value="#">АКПП</option>
+                <option value="#">РКПП</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form__input-group">
+          <div class="form__field">
+            <label for="" class="form__label">Тип кузова</label>
+            {{> input type="text" name="car-body-type" value="Внедорожник 5дв." }}
           </div>
           <div class="form__field">
             <button type="submit" class="btn btn--full-width">Рассчитать</button>
