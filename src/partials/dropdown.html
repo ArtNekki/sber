@@ -2,6 +2,8 @@
   <input type="radio" name="dropdown" class="dropdown-input" id="{{ id }}">
   <label for="{{ id }}" class="dropdown-btn">{{ name }}</label>
   <ul class="dropdown-list">
-    
+    {{#each list }}
+      <li>{{ name }}</li>
+    {{/each}}
   </ul>
 </div>
