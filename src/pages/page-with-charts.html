@@ -1,0 +1,19 @@
+<main class="page-main">
+  <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав
+  </h2>
+  {{> toolbar}}
+  {{> tags}}
+  <div class="object-details">
+    <div class="object-details__left">
+      <div class="object-details__label">Диаграма свода рынка</div>
+      {{> tabs-with-charts}}
+    </div>
+    <div class="object-details__right">
+      <div class="object-details__label">Аналоги на карте</div>
+      <div class="region-map region-map--single">
+        <div id="region-map" class="region-map__content"></div>
+      </div>
+    </div>
+  </div>
+  {{> table-facility}}
+</main>
