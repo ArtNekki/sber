@@ -1,33 +1,39 @@
 import * as d3 from "d3"
 
- function renderCircleChart(data) {
 
-  const COLORS = ['#3BA8F4', '#33B44E', '#999999', '#AAD6F8'];
-  const width = 250,
-  height = 250,
-  chartRadius = height / 2;
+// chart settings
+const COLORS = ['#3BA8F4', '#33B44E', '#999999', '#AAD6F8'];
+const PI = Math.PI;
 
-  const color = d3.scaleOrdinal(COLORS);
+const chartSize = {
+  WIDTH: 250,
+  HEIGHT: 250
+}
 
-  let svg = d3.select('#circle-chart').append('svg')
-    .attr('width', width)
-    .attr('height', height)
+const chartRadius = chartSize.HEIGHT / 2;
+const chartColors = d3.scaleOrdinal(COLORS);
+const arcMinRadius = 10;
+const arcPadding = 18;
+const labelPaddingX = -5;
+
+// render chart
+function renderCircleChart(data) {
+
+  // init chart
+  let svg = d3
+    .select('#circle-chart')
+    .append('svg')
+    .attr('width', chartSize.WIDTH)
+    .attr('height', chartSize.HEIGHT)
     .append('g')
-      .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+      .attr('transform', 'translate(' + chartSize.WIDTH / 2 + ',' + chartSize.HEIGHT / 2 + ')');
 
-  const PI = Math.PI,
-    arcMinRadius = 10,
-    arcPadding = 18,
-    labelPadding = -5,
-    numTicks = 10;
-
-  // data manipulation
+  // start
 
   let scale = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.value) * 1.1])
     .range([0, 1.65 * PI]);
 
-  let ticks = scale.ticks(numTicks).slice(0, -1);
   let keys = data.map((d, i) => d.name);
 
   //number of arcs
@@ -47,12 +53,12 @@ import * as d3 from "d3"
       .enter().append('g');
 
   radialAxis.append('text')
-    .attr('x', labelPadding)
+    .attr('x', labelPaddingX)
     .attr('y', (d, i) => {
       return -getOuterRadius(i) + arcPadding / 2;
     })
     .text(d => d.value)
-    .style('fill', (d, i) => color(i));
+    .style('fill', (d, i) => chartColors(i));
 
 
   //data arcs
@@ -62,7 +68,7 @@ import * as d3 from "d3"
       .data(data)
       .enter().append('path')
       .attr('class', 'arc')
-      .style('fill', (d, i) => color(i))
+      .style('fill', (d, i) => chartColors(i))
 
   arcs.transition()
     .delay((d, i) => i * 200)
