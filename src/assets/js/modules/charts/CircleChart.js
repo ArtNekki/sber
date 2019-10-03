@@ -1,26 +1,7 @@
 import * as d3 from "d3"
 
-const data = [
-  {
-    name: 'аналоги со средней ценой 36 000 ₽ / м²',
-    value: 100
-  },
-  {
-    name: 'аналоги со средней ценой 25 000 ₽ / м²',
-    value: 65
-  },
-  {
-    name: 'аналоги со средней ценой 45 000 ₽ / м²',
-    value: 87
-  },
-  {
-    name: 'аналоги со средней ценой 15 000 ₽ / м²',
-    value: 21
-  }
-]
+ function renderCircleChart(data) {
 
-
-document.addEventListener('DOMContentLoaded', function() {
   const COLORS = ['#3BA8F4', '#33B44E', '#999999', '#AAD6F8'];
   const width = 250,
   height = 250,
@@ -70,14 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .attr('y', (d, i) => {
       return -getOuterRadius(i) + arcPadding / 2;
     })
-    .text(d => d.value);
+    .text(d => d.value)
+    .style('fill', (d, i) => color(i));
 
-  let axialAxis = svg.append('g')
-    .attr('class', 'a axis')
-    .selectAll('g')
-      .data(ticks)
-      .enter().append('g')
-        .attr('transform', d => 'rotate(' + (rad2deg(scale(d)) - 90) + ')');
 
   //data arcs
   let arcs = svg.append('g')
@@ -98,10 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return t => arc(interpolate(t), i);
   }
 
-  function rad2deg(angle) {
-    return angle * 180 / PI;
-  }
-
   function getInnerRadius(index) {
     return arcMinRadius + (numArcs - (index + 1)) * (arcWidth + arcPadding);
   }
@@ -109,5 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function getOuterRadius(index) {
     return getInnerRadius(index) + arcWidth;
   }
+}
 
-});
+export default renderCircleChart;
