@@ -2,48 +2,41 @@ import * as d3 from "d3"
 
 const data = [
   {
-    name: 'item 1',
-    value: 10
-  },
-  {
-    name: 'item 2',
-    value: 65
-  },
-  {
-    name: 'item 3',
+    name: 'аналоги со средней ценой 36 000 ₽ / м²',
     value: 100
   },
   {
-    name: 'item 4',
-    value: 1
+    name: 'аналоги со средней ценой 25 000 ₽ / м²',
+    value: 65
   },
   {
-    name: 'item 5',
-    value: 34
+    name: 'аналоги со средней ценой 45 000 ₽ / м²',
+    value: 87
+  },
+  {
+    name: 'аналоги со средней ценой 15 000 ₽ / м²',
+    value: 21
   }
-  
 ]
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const width = 960,
-  height = 500,
-  chartRadius = height / 2 - 40;
+  const COLORS = ['#3BA8F4', '#33B44E', '#999999', '#AAD6F8'];
+  const width = 250,
+  height = 250,
+  chartRadius = height / 2;
 
-  const color = d3.scaleOrdinal(d3.schemeCategory10);
+  const color = d3.scaleOrdinal(COLORS);
 
-  let svg = d3.select('body').append('svg')
+  let svg = d3.select('#circle-chart').append('svg')
     .attr('width', width)
     .attr('height', height)
     .append('g')
       .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
 
-  let tooltip = d3.select('body').append('div')
-    .attr('class', 'tooltip');
-
   const PI = Math.PI,
     arcMinRadius = 10,
-    arcPadding = 10,
+    arcPadding = 18,
     labelPadding = -5,
     numTicks = 10;
 
@@ -51,11 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let scale = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.value) * 1.1])
-    .range([0, 2 * PI]);
+    .range([0, 1.65 * PI]);
 
   let ticks = scale.ticks(numTicks).slice(0, -1);
   let keys = data.map((d, i) => d.name);
-  console.log('keys', keys);
 
   //number of arcs
   const numArcs = keys.length;
@@ -73,13 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
       .data(data)
       .enter().append('g');
 
-  radialAxis.append('circle')
-    .attr('r', (d, i) => getOuterRadius(i) + arcPadding);
-
   radialAxis.append('text')
     .attr('x', labelPadding)
-    .attr('y', (d, i) => -getOuterRadius(i) + arcPadding)
-    .text(d => d.name);
+    .attr('y', (d, i) => {
+      return -getOuterRadius(i) + arcPadding / 2;
+    })
+    .text(d => d.value);
 
   let axialAxis = svg.append('g')
     .attr('class', 'a axis')
@@ -87,15 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .data(ticks)
       .enter().append('g')
         .attr('transform', d => 'rotate(' + (rad2deg(scale(d)) - 90) + ')');
-
-  axialAxis.append('line')
-    .attr('x2', chartRadius);
-
-  axialAxis.append('text')
-    .attr('x', chartRadius + 10)
-    .style('text-anchor', d => (scale(d) >= PI && scale(d) < 2 * PI ? 'end' : null))
-    .attr('transform', d => 'rotate(' + (90 - rad2deg(scale(d))) + ',' + (chartRadius + 10) + ',0)')
-    .text(d => d);
 
   //data arcs
   let arcs = svg.append('g')
@@ -111,24 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .duration(1000)
     .attrTween('d', arcTween);
 
-  arcs.on('mousemove', showTooltip)
-  arcs.on('mouseout', hideTooltip)
-
-
   function arcTween(d, i) {
     let interpolate = d3.interpolate(0, d.value);
     return t => arc(interpolate(t), i);
-  }
-
-  function showTooltip(d) {
-    tooltip.style('left', (d3.event.pageX + 10) + 'px')
-      .style('top', (d3.event.pageY - 25) + 'px')
-      .style('display', 'inline-block')
-      .html(d.value);
-  }
-
-  function hideTooltip() {
-    tooltip.style('display', 'none');
   }
 
   function rad2deg(angle) {
