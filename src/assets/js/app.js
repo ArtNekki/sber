@@ -7,4 +7,4 @@ import './utils/polyfill';
 import './modules/CustomScroll';
 import './modules/GlobalMap';
 import './modules/Map';
-
+import './modules/Chart';
