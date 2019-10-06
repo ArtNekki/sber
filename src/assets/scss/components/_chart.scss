@@ -92,3 +92,56 @@ text, button {
 .tick text {
   fill: $gray;
 }
+
+
+.legend {
+  font-size: 0;
+  white-space: nowrap;
+  margin-left: 50px;
+}
+
+.legend-column {
+  position: relative;
+  // width: 322px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.legend-item {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  position: relative;
+
+  &.disabled {
+    opacity: .3;
+  }
+}
+
+.legend-item-text {
+  line-height: 20px;
+}
+
+.legend-value {
+  position: absolute;
+  left: -65px;
+  font-weight: normal;
+  top: 3px;
+}
+
+.legend-date {
+  position: absolute;
+  top: -22px;
+  left: -65px;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+.legend-item-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 14px;
+}

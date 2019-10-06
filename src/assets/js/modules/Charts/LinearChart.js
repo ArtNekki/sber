@@ -14,11 +14,10 @@ d3.timeFormatDefaultLocale({
   'shortMonths': ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
 });
 
-
 function draw(data) {
   const margin = { top: 20, right: 20, bottom: 50, left: 50 };
-  const width = 420 - margin.left - margin.right;
-  const height = 390 - margin.top - margin.bottom;
+  const width = 250 - margin.left - margin.right;
+  const height = 250 - margin.top - margin.bottom;
 
   const x = d3.scaleTime()
     .range([0, width]);
@@ -26,12 +25,8 @@ function draw(data) {
   const y = d3.scaleLinear()
     .range([height, 0]);
 
-  
-
   const colorScale = d3.scaleOrdinal(COLORS);
 
-  console.log('nekki 33');
- 
   const svg = d3.select('#linear-chart')
     .append('svg')
     .attr('width', width + margin.left + margin.right)
@@ -50,7 +45,6 @@ function draw(data) {
 
   const xAxis = d3.axisBottom(x)
     .ticks((width + 2) / (height + 2) * 5)
-    .ticks(d3.timeYear.every(1))
     .tickSize(-height - 6)
     .tickPadding(10);
 
@@ -82,31 +76,83 @@ function draw(data) {
     .sortKeys((v1, v2) => (parseInt(v1, 10) > parseInt(v2, 10) ? 1 : -1))
     .entries(data);
 
+  const regionsNamesById = {};
+
+  nestByRegionId.forEach(item => {
+    regionsNamesById[item.key] = item.values[0].regionName;
+  });
+
   const regions = {};
 
   d3.map(data, d => d.regionId)
     .keys()
     .forEach((d, i) => {
-      regions[d] = nestByRegionId[i].values;
+      regions[d] = {
+        data: nestByRegionId[i].values,
+        enabled: true
+      };
     });
 
-  const regionIds = Object.keys(regions);
+  const regionsIds = Object.keys(regions);
 
   const lineGenerator = d3.line()
     .x(d => x(d.date))
     .y(d => y(d.percent))
     .curve(d3.curveCardinal);
 
-  svg
-    .selectAll('.line')
-    .data(regionIds)
-    .enter()
-    .append('path')
-    .attr('class', 'line')
-    .attr('id', regionId => `region-${ regionId }`)
-    .attr('d', regionId => lineGenerator(regions[regionId]))
-    .style('stroke', regionId => colorScale(regionId));
-}
+  const legendContainer = d3.select('.legend');
+  console.log('rids', regionsIds);
 
+  const legends = legendContainer
+    .selectAll('div.legend-item')
+    .data(regionsIds)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-item')
+    .on('click', clickLegendHandler);
+
+  legends.append('div')
+    .attr('class', 'legend-item-color')
+    .style('background-color', regionId => colorScale(regionId));
+
+  legends.append('div')
+    .attr('class', 'legend-item-text')
+    .text(regionId => regionsNamesById[regionId]);
+
+
+  function redrawChart() {
+    const enabledRegionsIds = regionsIds.filter(regionId => regions[regionId].enabled);
+
+    const paths = svg
+      .selectAll('.line')
+      .data(enabledRegionsIds);
+
+    paths.exit().remove();
+
+    paths
+      .enter()
+      .append('path')
+      .merge(paths)
+      .attr('class', 'line')
+      .attr('id', regionId => `region-${ regionId }`)
+      .attr('d', regionId => lineGenerator(regions[regionId].data)
+      )
+      .style('stroke', regionId => colorScale(regionId));
+
+    legends.each(function(regionId) {
+      const isEnabledRegion = enabledRegionsIds.indexOf(regionId) >= 0;
+
+      d3.select(this).classed('disabled', !isEnabledRegion);
+    });
+  }
+
+  redrawChart();
+
+  function clickLegendHandler(regionId) {
+    regions[regionId].enabled = !regions[regionId].enabled;
+
+    redrawChart();
+  }
+}
 
 draw(data);
