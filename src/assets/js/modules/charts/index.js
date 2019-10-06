@@ -1,4 +1,5 @@
 import renderCircleChart from './CircleChart';
+import './LinearChart';
 
 
 const data = [
