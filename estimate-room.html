@@ -1,0 +1,411 @@
+<!doctype html>
+<html class="no-js page" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlebars starter kit</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        function cth(c){document.documentElement.classList.add(c)}
+        'ontouchstart' in window?cth('touch'):cth('no-touch');
+        if(typeof InstallTrigger!=='undefined')cth('firefox');
+        if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+        if(/*@cc_on!@*/false||!!document.documentMode)cth('ie');
+        if(!(/*@cc_on!@*/false||!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+        if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+        if(~navigator.appVersion.indexOf("Win"))cth('windows');
+        if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+        if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+    </script>
+  </head>
+<body>
+  <div id="page" class="page-inner">
+    <header class="page-header">
+        <nav class="page-header__inner">
+          <a href="" class="page-header__logo">
+            <svg width="145" height="37" class="icon">
+                     <use xlink:href="assets/img/symbol/sprite.svg#logo">
+                  </svg>
+          </a>
+          <ul class="main-nav">
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Аналитика</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Экспресс оценка</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Экспертная оценка</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Отчет об оценки</a>
+                </li>
+          </ul>
+          <div class="user-role">
+            <img src="/assets/img/content/user-avatar@3x.jpg" width="48" height="48" srcset=" /assets/img/content/user-avatar.jpg 1x, /assets/img/content/user-avatar@2x.jpg 2x" class="user-role__avatar" alt="Константин Константинопольский">
+            <div class="user-role__info">
+                <a href="#" class="user-role__name">Константин Константинопольский</a>
+                <span class="user-role__post">менеджер</span>
+            </div>
+            <ul class="user-role__list">
+                <li class="user-role__item">
+                  <a href="#" class="user-role__link">
+                    <svg width="28" height="27" class="icon">
+                     <use xlink:href="assets/img/symbol/sprite.svg#faq">
+                  </svg>
+                    <span>FAQ</span>
+                  </a>
+                </li>
+                <li class="user-role__item">
+                  <a href="#" class="user-role__link">
+                    <svg width="28" height="26" class="icon">
+                     <use xlink:href="assets/img/symbol/sprite.svg#support">
+                  </svg>
+                    <span>Поддержка</span>
+                  </a>
+                </li>
+                <li class="user-role__item">
+                  <a href="#" class="user-role__link">
+                    <svg width="28" height="24" class="icon">
+                     <use xlink:href="assets/img/symbol/sprite.svg#logout">
+                  </svg>
+                    <span>Выход</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+    <main class="page-main">
+      <h2 class="page-main__title">Аналитическая система по проведению оценки объектов движимого/недвижимого имущества/прав
+      </h2>
+      <div class="toolbar">
+        <div class="toolbar__item">
+          <button class="toolbar__action">
+            <svg width="29" height="29" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#update">
+                    </svg>
+            <span class="toolbar__text">обновить <br /> очередь</span>
+          </button>
+        </div>
+        <div class="toolbar__item">
+          <button class="toolbar__action">
+            <svg width="25" height="31" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#xls">
+                    </svg>
+            <span class="toolbar__text">скачать <br /> файл</span>
+          </button>
+        </div>
+        <div class="toolbar__item">
+          <button class="toolbar__action">
+            <svg width="28" height="28" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#new">
+                    </svg>
+            <span class="toolbar__text">Создать <br /> новый запрос</span>
+          </button>
+        </div>
+        <div class="toolbar__item">
+          <span class="toolbar__counter toolbar__counter--total">4 368</span>
+          <span class="toolbar__text">всего <br /> запросов</span>
+        </div>
+        <div class="toolbar__item">
+          <span class="toolbar__counter toolbar__counter--category">368</span>
+          <span class="toolbar__text">всего <br /> запросов</span>
+        </div>
+      </div>
+      <div class="tags">
+        <a href="#" class="tags__item">Квартира/апартаменты</a>
+        <a href="#" class="tags__item">Комнаты/доля в квартире</a>
+        <a href="#" class="tags__item">З/у (для индив.пользования)</a>
+        <a href="#" class="tags__item">З/у с индиви.жил.домом</a>
+        <a href="#" class="tags__item">Автотранспорт</a>
+        <a href="#" class="tags__item">Гаражи/машиноместа </a>
+        <a href="#" class="tags__item">Спецтехника и самоходные механизмы</a>
+        <a href="#" class="tags__item">Технологические линии </a>
+        <a href="#" class="tags__item">Коммерция < 100 м<sup>2</sup></a>
+        <a href="#" class="tags__item">Коммерция 101–300 м<sup>2</sup></a>
+        <a href="#" class="tags__item">Коммерция 301–1000 м<sup>2</sup></a>
+        <a href="#" class="tags__item">Коммерция 1001–3000 м<sup>2</sup></a>
+        <a href="#" class="tags__item">Коммерция 3001–5000 м<sup>2</sup></a>
+        <a href="#" class="tags__item">Спец.оборудование до 10 ед.объектов</a>
+        <a href="#" class="tags__item">Спец.оборудование > 11 ед.объектов</a>
+      </div>
+      <div class="object-details">
+        <div class="object-details__left">
+          <form action="" class="form">
+            <div class="form__field">
+              <label for="" class="form__label">Адрес объекта недвижимости</label>
+              <div class="input ">
+                <input type="text" class="input__field" name="facility-address" placeholder="" value="Новгород, ул. Чудинцева, д.1, кв.4" />
+              </div>
+            </div>
+            <div class="form__input-group">
+              <div class="form__field">
+                <label for="" class="form__label">Общая площадь</label>
+                <div class="input input--text-center">
+                  <input type="number" class="input__field" name="facility-area" placeholder="" value="68" />
+                    <span class="input__meta">м<sup>2</sup></span> 
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="" class="form__label">Площадь доли</label>
+                <div class="input input--text-center">
+                  <input type="number" class="input__field" name="facility-area" placeholder="" value="32" />
+                    <span class="input__meta">м<sup>2</sup></span> 
+                </div>
+              </div>
+            </div>
+            <div class="form__input-group">
+              <div class="form__field">
+                <label for="" class="form__label">Стоимость</label>
+                <div class="input input--text-center">
+                  <input type="number" class="input__field" name="facility-cost" placeholder="" value="5255454" />
+                    <span class="input__meta">&#8381;</span> 
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="" class="form__label">Количество комнат</label>
+                <div class="input input--text-center">
+                  <input type="number" class="input__field" name="facility-count" placeholder="" value="3" />
+                </div>
+              </div>
+            </div>
+            <div class="form__input-group">
+              <div class="form__field">
+                <label for="" class="form__label">Материал стен </label>
+                <div class="select" name="facility-material">
+                  <select id="category" class="select__field">
+                    <option value="#">Монолит / кирпич</option>
+                    <option value="#">Монолит / кирпич</option>
+                    <option value="#">Монолит / кирпич</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__field">
+                <label for="" class="form__label">Этаж / этажность</label>
+                <div class="input input--double input--text-center">
+                  <input type="number" class="input__field" name="facility-floor"  />
+                  <span class="input__devider">/</span>
+                  <input type="number" class="input__field" name="facility-floor"  />
+                </div>
+                            </div>
+            </div>
+            <div class="form__field">
+              <label for="" class="form__label">Загрузить документы</label>
+              <div class="input ">
+                <input type="text" class="input__field" name="facility-file" placeholder="" value="" />
+              </div>
+            </div>
+            <div class="form__input-group">
+              <div class="form__field">
+                <label for="" class="form__label">Год постройки</label>
+                <div class="input input--text-center">
+                  <input type="number" class="input__field" name="facility-rooms-count" placeholder="" value="2014" />
+                </div>
+              </div>
+              <div class="form__field">
+                <button type="submit" class="btn btn--full-width">Рассчитать</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="object-details__right">
+          <div class="object-details__label">Местоположение</div>
+          <div class="region-map region-map--single">
+            <div id="region-map" class="region-map__content"></div>
+          </div>
+        </div>
+      </div>
+      <div id="table-scroll" class="table-scroll">
+        <div class="table-scroll-content">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  <span class="table__label">Дата запроса</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Дата ответа</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">ID обьекта</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th class="table__dropdown">
+                  <div class="dropdown">
+          <input type="radio" name="dropdown" class="dropdown__input" id="dropdown-status">
+          <label for="dropdown-status" class="dropdown__btn">
+            <span>Статус</span>
+          </label>
+          <ul class="dropdown__list">
+            <li class="dropdown__item">Отправлен</li> <li class="dropdown__item">Ожидает ответа</li> <li class="dropdown__item">Обработан</li>
+          </ul>
+        </div>
+        
+                </th>
+                <th class="table__dropdown">
+                  <div class="dropdown">
+          <input type="radio" name="dropdown" class="dropdown__input" id="dropdown-object-type">
+          <label for="dropdown-object-type" class="dropdown__btn">
+            <span>Тип обьекта</span>
+          </label>
+          <ul class="dropdown__list">
+            <li class="dropdown__item">Квартиры</li> <li class="dropdown__item">Апартаменты</li>
+          </ul>
+        </div>
+        
+                </th>
+                <th class="table__wide">
+                  <span class="table__label">Адрес</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Этаж /<br />этажность</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th class="table__dropdown">
+                  <div class="dropdown">
+          <input type="radio" name="dropdown" class="dropdown__input" id="dropdown-material">
+          <label for="dropdown-material" class="dropdown__btn">
+            <span>Материал<br />стен</span>
+          </label>
+          <ul class="dropdown__list">
+            <li class="dropdown__item">Кирпич</li> <li class="dropdown__item">Бетон</li> <li class="dropdown__item">Дерево</li>
+          </ul>
+        </div>
+        
+                </th>
+                <th class="table__dropdown">
+                  <div class="dropdown">
+          <input type="radio" name="dropdown" class="dropdown__input" id="dropdown-rooms-count">
+          <label for="dropdown-rooms-count" class="dropdown__btn">
+            <span>Количество<br />комнат</span>
+          </label>
+          <ul class="dropdown__list">
+            <li class="dropdown__item">1</li> <li class="dropdown__item">2</li> <li class="dropdown__item">3</li> <li class="dropdown__item">4</li>
+          </ul>
+        </div>
+        
+                </th>
+                <th>
+                  <span class="table__label">Площадь, м<sup>2</sup></span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Год постройки</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Стоимость <br /> обьекта, &#8381;</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Стоимость <br /> за м <sup>2</sup>, &#8381;</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Стоимость <br /> по отчету, &#8381;</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+                <th>
+                  <span class="table__label">Дельта, &#8381;</span>
+                  <svg width="14" height="14" class="icon">
+                       <use xlink:href="assets/img/symbol/sprite.svg#search">
+                    </svg>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>22.07.2019</td>
+                <td>22.07.2019</td>
+                <td>26514541</td>
+                <td>Ожидает ответа</td>
+                <td>Апартаменты</td>
+                <td>Улица Двадцати Шести Бакинских Комиссаров, 24, Москва, Россия, 454079</td>
+                <td>15/24</td>
+                <td>кирпич</td>
+                <td>1</td>
+                <td>48</td>
+                <td>1984</td>
+                <td>3 658 488</td>
+                <td>76 218,5</td>
+                <td>76 218,5</td>
+                <td>939,9</td>
+              </tr>
+              <tr>
+                <td>22.07.2019</td>
+                <td>22.07.2019</td>
+                <td>26514541</td>
+                <td>Ожидает ответа</td>
+                <td>Апартаменты</td>
+                <td>Улица Двадцати Шести Бакинских Комиссаров, 24, Москва, Россия, 454079</td>
+                <td>15/24</td>
+                <td>кирпич</td>
+                <td>1</td>
+                <td>48</td>
+                <td>1984</td>
+                <td>3 658 488</td>
+                <td>76 218,5</td>
+                <td>76 218,5</td>
+                <td>939,9</td>
+              </tr>
+              <tr>
+                <td>22.07.2019</td>
+                <td>22.07.2019</td>
+                <td>26514541</td>
+                <td>Ожидает ответа</td>
+                <td>Апартаменты</td>
+                <td>Улица Двадцати Шести Бакинских Комиссаров, 24, Москва, Россия, 454079</td>
+                <td>15/24</td>
+                <td>кирпич</td>
+                <td>1</td>
+                <td>48</td>
+                <td>1984</td>
+                <td>3 658 488</td>
+                <td>76 218,5</td>
+                <td>76 218,5</td>
+                <td>939,9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll-track">
+          <div class="table-scroll-free">
+            <div class="table-scroll-bar"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+  </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6m-XnHjttkr4gmzfAlujvwmFtjiCs1tg"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
